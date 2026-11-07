@@ -9,6 +9,7 @@ chill: 4 hr
 churn: 20–25 min
 freeze: 4 hr
 tags: [classic, salt_and_straw]
+image: assets/images/chocolate-border-bar.jpeg
 ---
 
 ## Ingredients

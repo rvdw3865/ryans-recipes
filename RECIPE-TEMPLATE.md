@@ -12,6 +12,8 @@ chill: 4 hr
 freeze: 4 hr
 total: 1 hr
 tags: [summer, kid favorite]
+# Optional photo: put the file in assets/images/ and remove the # below. Leave it out to use the category icon.
+# image: /assets/images/name-of-the-recipe.jpg
 ---
 
 ## Ingredients
