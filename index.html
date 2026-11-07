@@ -1,0 +1,43 @@
+---
+layout: default
+---
+{% assign recipes = site.pages | where_exp: "p", "p.dir == '/recipes/'" | sort_natural: "title" %}
+<div class="toolbar">
+  <div class="search">
+    <span aria-hidden="true">⌕</span>
+    <input id="q" type="search" placeholder="Search by name, ingredient or cook" aria-label="Search recipes">
+  </div>
+</div>
+<div class="chips" role="group" aria-label="Filter by category" id="chips">
+  <button class="chip" type="button" data-filter="all" aria-pressed="true">All · {{ recipes.size }}</button>
+  {% for c in site.data.categories %}{% assign n = recipes | where: "category", c.key | size %}{% if n > 0 %}
+  <button class="chip" type="button" data-filter="{{ c.key }}" aria-pressed="false"><span class="dot" style="background:{{ c.color }}"></span>{{ c.label }} · {{ n }}</button>
+  {% endif %}{% endfor %}
+</div>
+
+{% if recipes.size == 0 %}
+<div class="empty">
+  <h2>No recipes yet</h2>
+  <p>Add a recipe file to the recipes folder and it will show up here.</p>
+</div>
+{% endif %}
+
+<div class="grid" id="grid">
+{% for p in recipes %}
+  {% assign c = site.data.categories | where: "key", p.category | first %}
+  {% unless c %}{% assign c = site.data.categories | last %}{% endunless %}
+  {% assign tagtext = p.tags | join: ' ' %}
+  {% capture hay %}{{ p.title }} {{ p.from }} {{ p.description }} {{ c.label }} {{ tagtext }} {{ p.content }}{% endcapture %}
+  <a class="card" href="{{ p.url | relative_url }}" data-cat="{{ c.key }}"
+     data-search="{{ hay | strip_html | strip_newlines | downcase | escape }}">
+    <div class="band" style="background:{{ c.color }}"></div>
+    <div class="body">
+      <span class="stylepill"><span class="dot" style="background:{{ c.color }}"></span>{{ c.label }}</span>
+      <h3>{{ p.title }}</h3>
+      {% if p.from %}<p class="kitchen">From the kitchen of {{ p.from }}</p>{% endif %}
+      {% if p.serves or p.makes or p.total %}<div class="meta">{% if p.serves %}<span>Serves {{ p.serves }}</span>{% elsif p.makes %}<span>Makes {{ p.makes }}</span>{% endif %}{% if p.total %}<span>{{ p.total }} total</span>{% endif %}</div>{% endif %}
+    </div>
+  </a>
+{% endfor %}
+</div>
+<p class="note" id="nomatch" hidden>No recipes match that search.</p>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+{% if page.description %}<meta name="description" content="{{ page.description | escape }}">{% endif %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+<header class="mast">
+  <div class="wrap">
+    <div>
+      <a class="logo" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      <p class="tagline">{{ site.tagline }}</p>
+    </div>
+  </div>
+</header>
+<main class="wrap">
+{{ content }}
+</main>
+<footer class="foot"><div class="wrap">Made in Ryan's kitchen. Shared with love.</div></footer>
+<div class="toast" id="toast" role="status"></div>
+<script src="{{ '/assets/recipes.js' | relative_url }}"></script>
+</body>
+</html>

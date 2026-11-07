@@ -1,0 +1,14 @@
+title: Ryan's Recipes
+tagline: Recipes from my kitchen, for family and friends.
+
+# Every file in the recipes folder uses the recipe page design.
+defaults:
+  - scope:
+      path: "recipes"
+    values:
+      layout: recipe
+
+# Files that are notes for you, not pages on the site.
+exclude:
+  - README.md
+  - RECIPE-TEMPLATE.md
