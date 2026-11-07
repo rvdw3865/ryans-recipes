@@ -3,34 +3,45 @@ layout: default
 ---
 {% assign c = site.data.categories | where: "key", page.category | first %}
 {% unless c %}{% assign c = site.data.categories | last %}{% endunless %}
-<article class="recipe" id="recipe">
-  <div class="recipe-head">
-    <div class="crumbs">
-      <a class="btn ghost" href="{{ '/' | relative_url }}#{{ c.key }}">← {{ c.label }}</a>
-      <div class="actions">
-        <button class="btn" type="button" id="copy-link">Copy link</button>
-        <button class="btn" type="button" id="copy-text">Copy recipe text</button>
-      </div>
+<article class="recipe" id="recipe" style="--cat:{{ c.color }}">
+  <nav class="crumbs">
+    <a href="{{ '/' | relative_url }}">Recipes</a>
+    <span aria-hidden="true">/</span>
+    <a href="{{ '/' | relative_url }}#{{ c.key }}">{{ c.label }}</a>
+  </nav>
+
+  <header class="recipe-head">
+    <div class="recipe-title">
+      <h1>{{ page.title }}</h1>
+      {% if page.description %}<p class="blurb">{{ page.description }}</p>{% endif %}
+      {% if page.from %}<p class="kitchen">From the kitchen of {{ page.from }}</p>{% endif %}
     </div>
-    <span class="stylepill"><span class="dot" style="background:{{ c.color }}"></span>{{ c.label }}</span>
-    <h1>{{ page.title }}</h1>
-    {% if page.from %}<p class="kitchen">From the kitchen of {{ page.from }}</p>{% endif %}
-    {% if page.description %}<p class="blurb">{{ page.description }}</p>{% endif %}
-    <div class="stats">
-      {% if page.serves %}<div class="stat"><span>Serves</span><b>{{ page.serves }}</b></div>{% endif %}
-      {% if page.makes %}<div class="stat"><span>Makes</span><b>{{ page.makes }}</b></div>{% endif %}
-      {% if page.prep %}<div class="stat"><span>Prep</span><b>{{ page.prep }}</b></div>{% endif %}
-      {% if page.cook %}<div class="stat"><span>Cook</span><b>{{ page.cook }}</b></div>{% endif %}
-      {% if page.churn %}<div class="stat"><span>Churn</span><b>{{ page.churn }}</b></div>{% endif %}
-      {% if page.chill %}<div class="stat"><span>Chill</span><b>{{ page.chill }}</b></div>{% endif %}
-      {% if page.freeze %}<div class="stat"><span>Freeze</span><b>{{ page.freeze }}</b></div>{% endif %}
-      {% if page.total %}<div class="stat"><span>Total</span><b>{{ page.total }}</b></div>{% endif %}
+    <div class="recipe-art"><span class="card-icon">{% include icon.html key=c.key %}</span></div>
+  </header>
+
+  <div class="recipe-bar">
+    <dl class="stats">
+      {% if page.serves %}<div><dt>Serves</dt><dd>{{ page.serves }}</dd></div>{% endif %}
+      {% if page.makes %}<div><dt>Makes</dt><dd>{{ page.makes }}</dd></div>{% endif %}
+      {% if page.prep %}<div><dt>Prep</dt><dd>{{ page.prep }}</dd></div>{% endif %}
+      {% if page.cook %}<div><dt>Cook</dt><dd>{{ page.cook }}</dd></div>{% endif %}
+      {% if page.churn %}<div><dt>Churn</dt><dd>{{ page.churn }}</dd></div>{% endif %}
+      {% if page.chill %}<div><dt>Chill</dt><dd>{{ page.chill }}</dd></div>{% endif %}
+      {% if page.freeze %}<div><dt>Freeze</dt><dd>{{ page.freeze }}</dd></div>{% endif %}
+      {% if page.total %}<div><dt>Total</dt><dd>{{ page.total }}</dd></div>{% endif %}
+    </dl>
+    <div class="actions">
+      <button class="btn" type="button" id="copy-link">Copy link</button>
+      <button class="btn" type="button" id="copy-text">Copy recipe text</button>
     </div>
   </div>
-  <div class="recipe-body" id="recipe-body">
+
+  <div class="recipe-main" id="recipe-main">
+    <div class="recipe-body" id="recipe-body">
 {{ content }}
-  {% if page.tags and page.tags.size > 0 %}
-  <div class="tags">{% for t in page.tags %}<span class="tag">#{{ t }}</span>{% endfor %}</div>
-  {% endif %}
+      {% if page.tags and page.tags.size > 0 %}
+      <div class="tags">{% for t in page.tags %}<span class="tag">{{ t }}</span>{% endfor %}</div>
+      {% endif %}
+    </div>
   </div>
 </article>

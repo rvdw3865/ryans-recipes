@@ -2,17 +2,22 @@
 layout: default
 ---
 {% assign recipes = site.pages | where_exp: "p", "p.dir == '/recipes/'" | sort_natural: "title" %}
-<div class="toolbar">
-  <div class="search">
-    <span aria-hidden="true">⌕</span>
-    <input id="q" type="search" placeholder="Search by name, ingredient or cook" aria-label="Search recipes">
+<section class="intro">
+  <h1>The things I cook, and the ones worth making again.</h1>
+  <p>{{ recipes.size }} {% if recipes.size == 1 %}recipe{% else %}recipes{% endif %} from my kitchen and the people I've learned from. Help yourself.</p>
+</section>
+
+<div class="controls">
+  <label class="search" for="q">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 L21 21"/></svg>
+    <input id="q" type="search" placeholder="Search recipes or ingredients" autocomplete="off">
+  </label>
+  <div class="chips" role="group" aria-label="Filter by category" id="chips">
+    <button class="chip" type="button" data-filter="all" aria-pressed="true">All <span class="count">{{ recipes.size }}</span></button>
+    {% for c in site.data.categories %}{% assign n = recipes | where: "category", c.key | size %}{% if n > 0 %}
+    <button class="chip" type="button" data-filter="{{ c.key }}" aria-pressed="false">{{ c.label }} <span class="count">{{ n }}</span></button>
+    {% endif %}{% endfor %}
   </div>
-</div>
-<div class="chips" role="group" aria-label="Filter by category" id="chips">
-  <button class="chip" type="button" data-filter="all" aria-pressed="true">All · {{ recipes.size }}</button>
-  {% for c in site.data.categories %}{% assign n = recipes | where: "category", c.key | size %}{% if n > 0 %}
-  <button class="chip" type="button" data-filter="{{ c.key }}" aria-pressed="false"><span class="dot" style="background:{{ c.color }}"></span>{{ c.label }} · {{ n }}</button>
-  {% endif %}{% endfor %}
 </div>
 
 {% if recipes.size == 0 %}
@@ -28,16 +33,23 @@ layout: default
   {% unless c %}{% assign c = site.data.categories | last %}{% endunless %}
   {% assign tagtext = p.tags | join: ' ' %}
   {% capture hay %}{{ p.title }} {{ p.from }} {{ p.description }} {{ c.label }} {{ tagtext }} {{ p.content }}{% endcapture %}
-  <a class="card" href="{{ p.url | relative_url }}" data-cat="{{ c.key }}"
+  <a class="card" href="{{ p.url | relative_url }}" data-cat="{{ c.key }}" style="--cat:{{ c.color }}"
      data-search="{{ hay | strip_html | strip_newlines | downcase | escape }}">
-    <div class="band" style="background:{{ c.color }}"></div>
-    <div class="body">
-      <span class="stylepill"><span class="dot" style="background:{{ c.color }}"></span>{{ c.label }}</span>
+    <div class="card-art"><span class="card-icon">{% include icon.html key=c.key %}</span></div>
+    <div class="card-body">
+      <span class="cat-name">{{ c.label }}</span>
       <h3>{{ p.title }}</h3>
-      {% if p.from %}<p class="kitchen">From the kitchen of {{ p.from }}</p>{% endif %}
-      {% if p.serves or p.makes or p.total %}<div class="meta">{% if p.serves %}<span>Serves {{ p.serves }}</span>{% elsif p.makes %}<span>Makes {{ p.makes }}</span>{% endif %}{% if p.total %}<span>{{ p.total }} total</span>{% endif %}</div>{% endif %}
+      {% if p.description %}<p class="card-blurb">{{ p.description }}</p>{% endif %}
+      <p class="meta">
+        {% if p.from %}<span>From {{ p.from }}</span>{% endif %}
+        {% if p.serves %}<span>Serves {{ p.serves }}</span>{% elsif p.makes %}<span>Makes {{ p.makes }}</span>{% endif %}
+        {% if p.total %}<span>{{ p.total }}</span>{% endif %}
+      </p>
     </div>
   </a>
 {% endfor %}
 </div>
-<p class="note" id="nomatch" hidden>No recipes match that search.</p>
+<div class="empty" id="nomatch" hidden>
+  <h2>Nothing matches that</h2>
+  <p>Try a different word, or choose All to see every recipe.</p>
+</div>

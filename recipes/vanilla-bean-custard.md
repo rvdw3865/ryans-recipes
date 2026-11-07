@@ -1,6 +1,6 @@
 ---
 title: Vanilla Bean Custard
-from: Ryan (example, edit or delete)
+from: Ryan (example, delete me anytime)
 category: ice-cream
 description: The classic French-style base. Rich, smooth and the starting point for almost every other flavor.
 makes: 1 quart

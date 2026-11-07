@@ -171,9 +171,23 @@
         scale.appendChild(b);
       });
 
-      recipe.insertBefore(panel, body);
+      body.parentNode.insertBefore(panel, body);
       recipe.classList.add("enhanced");
     }
+
+    // set the Notes section apart
+    body.querySelectorAll("h2").forEach(function (h) {
+      if (!/^notes?\b/i.test(h.textContent.trim())) return;
+      var note = document.createElement("div");
+      note.className = "notes";
+      h.parentNode.insertBefore(note, h);
+      var el = h;
+      while (el && !(el !== h && el.tagName === "H2") && !(el.classList && el.classList.contains("tags"))) {
+        var nx = el.nextElementSibling;
+        note.appendChild(el);
+        el = nx;
+      }
+    });
 
     var link = document.getElementById("copy-link");
     if (link) link.addEventListener("click", function () { copy(location.href, "Link copied. Paste it in a text or email."); });
@@ -182,7 +196,7 @@
       var parts = [];
       var head = recipe.querySelector(".recipe-head");
       ["h1", ".kitchen", ".blurb"].forEach(function (sel) { var e = head.querySelector(sel); if (e) parts.push(e.textContent.trim()); });
-      var stats = [].map.call(head.querySelectorAll(".stat"), function (s) { return s.querySelector("span").textContent + " " + s.querySelector("b").textContent; });
+      var stats = [].map.call(recipe.querySelectorAll(".stats > div"), function (d) { return d.querySelector("dt").textContent + " " + d.querySelector("dd").textContent; });
       if (stats.length) parts.push(stats.join(" · "));
       var panelEl = recipe.querySelector(".panel");
       if (panelEl) {
@@ -191,7 +205,8 @@
           parts.push(li.classList.contains("sub") ? "\n" + li.textContent.trim() + ":" : "• " + li.textContent.replace(/\s+/g, " ").trim());
         });
       }
-      parts.push(body.innerText.trim());
+      var bodyText = body.cloneNode(true); var tg = bodyText.querySelector(".tags"); if (tg) tg.remove();
+      parts.push(bodyText.innerText ? bodyText.innerText.trim() : bodyText.textContent.trim());
       copy(parts.join("\n\n").replace(/\n{3,}/g, "\n\n"), "Recipe copied. Paste it anywhere.");
     });
   }

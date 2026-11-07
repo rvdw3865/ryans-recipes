@@ -1,29 +1,30 @@
 # The "category" line in a recipe must be one of these keys.
 # To add a category, copy a block and pick a new key, name and color.
+# Colors are deep, earthy tones; the icon is drawn in light oak on top.
 - key: ice-cream
   label: Ice Cream
-  color: "#f2a7b8"
+  color: "#4f3f3a"
 - key: breakfast
   label: Breakfast
-  color: "#f2c857"
+  color: "#7a6232"
 - key: mains
   label: Main Dishes
-  color: "#e58a5c"
+  color: "#5a3d2b"
 - key: sides
   label: Sides & Salads
-  color: "#9cc98a"
+  color: "#4e5a33"
 - key: soups
   label: Soups
-  color: "#d9a066"
+  color: "#6b4c2e"
 - key: baking
   label: Baking & Bread
-  color: "#d8b48c"
+  color: "#7d5c3a"
 - key: desserts
   label: Desserts
-  color: "#c9a3e6"
+  color: "#47404b"
 - key: drinks
   label: Drinks
-  color: "#8fc3e8"
+  color: "#2f4652"
 - key: other
   label: Other
-  color: "#c9bfb6"
+  color: "#3c403a"

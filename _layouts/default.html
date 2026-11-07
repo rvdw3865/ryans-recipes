@@ -1,28 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="olive">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
 {% if page.description %}<meta name="description" content="{{ page.description | escape }}">{% endif %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%233f5f52'/><text x='32' y='44' font-family='Georgia,serif' font-size='34' fill='%23f3f2ec' text-anchor='middle'>R</text></svg>">
 </head>
 <body>
-<header class="mast">
-  <div class="wrap">
-    <div>
-      <a class="logo" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-      <p class="tagline">{{ site.tagline }}</p>
-    </div>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="brand-mark" aria-hidden="true">R</span>
+      <span class="brand-name">{{ site.title }}</span>
+    </a>
+    <p class="tagline">{{ site.tagline }}</p>
   </div>
 </header>
 <main class="wrap">
 {{ content }}
 </main>
-<footer class="foot"><div class="wrap">Made in Ryan's kitchen. Shared with love.</div></footer>
+<footer class="foot"><div class="wrap">Cooked, tested and written down by Ryan.</div></footer>
 <div class="toast" id="toast" role="status"></div>
 <script src="{{ '/assets/recipes.js' | relative_url }}"></script>
 </body>
