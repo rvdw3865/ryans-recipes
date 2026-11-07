@@ -1,5 +1,5 @@
 ---
-title: Chocolate Ginger, Border Bar Inspired Ice Cream
+title: Midnight S'more Ice Cream
 from: Ryan
 category: ice-cream
 description: This ice cream was Halloween inspired. One of my favorite underrated Halloween candies is the Midnight Milkyway. Marshmallow and caramel covered in a dark chocolate. Michael got me this incredible Black Cocoa Powder from King Arthur baking which gives the ice cream this fun, black color and deep cocoa flavor to combat the sugar from the copious amounts of marshmallow.
