@@ -4,8 +4,8 @@ from: Ryan
 category: ice-cream
 description: This ice cream was Halloween inspired. One of my favorite underrated Halloween candies is the Midnight Milkyway. Marshmallow and caramel covered in a dark chocolate. Michael got me this incredible Black Cocoa Powder from King Arthur baking which gives the ice cream this fun, black color and deep cocoa flavor to combat the sugar from the copious amounts of marshmallow.
 makes: 1.5 pints
-prep: 30 min
-chill: 4 hr
+prep: 1.5 hr
+chill: Overnight (8-12 hours)
 churn: 20–25 min
 freeze: 4 hr
 tags: [classic, salt_and_straw, midnight_smore, black_cocoa_powder, marshmallow]

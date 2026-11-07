@@ -5,7 +5,7 @@ category: ice-cream
 description: This ice cream was inspired by a delicious chocolate, ginger cookies from the UK called, Border Bars. It's a buttery, gingery cookie covered in a layer of dark chocolate. They were so good that we made it into an ice cream flavor.
 makes: 1.5 pints
 prep: 30 min
-chill: 4 hr
+chill: Overnight (8-12 hours)
 churn: 20–25 min
 freeze: 4 hr
 tags: [classic, salt_and_straw, border_bar]
