@@ -8,7 +8,7 @@ prep: 30 min
 chill: 4 hr
 churn: 20–25 min
 freeze: 4 hr
-tags: [classic, salt_and_straw]
+tags: [classic, salt_and_straw, border_bar]
 image: /assets/images/chocolate-border-bar.jpg
 ---
 
@@ -51,6 +51,8 @@ image: /assets/images/chocolate-border-bar.jpg
 
 ### Churn it up!
 1. Place your ice cream bowl into your ice cream machine and let chill for 5-10 mins.
-2. Take your base and border bars out of the fridge.
-3. Pour in your base and begin churning on Ice Cream mode.
-4. While that churns chop up your border bars into bite sized pieces to mix in.
+2. While your bowl chills, take your base and pass it through a fine mesh sieve, removing any leftover pieces of ginger that may not have blended successfully.
+3. Once the bowl is sufficiently cooled, pour your strained base into the ice cream machine and begin churning on Ice Cream mode.
+4. About 10 mins into the churning process, cut up your border bars into bite sized pieces to mix in.
+5. Once your ice cream machine signifies it is ready for mix-ins to be added, add in your border bar pieces.
+6. Finish churning and place your ice cream directly into the freezer.
