@@ -16,7 +16,7 @@ layout: default
       {% if page.description %}<p class="blurb">{{ page.description }}</p>{% endif %}
       {% if page.from %}<p class="kitchen">From the kitchen of {{ page.from }}</p>{% endif %}
     </div>
-    {% if page.image %}<div class="recipe-art has-photo"><img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title }}"></div>
+    {% if page.image %}<div class="recipe-art has-photo{% if page.image_fit == 'whole' %} fit-whole{% endif %}" style="--photo:url('{{ page.image | relative_url }}')"><img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title }}"{% if page.image_position %} style="object-position:{{ page.image_position }}"{% endif %}></div>
     {% else %}<div class="recipe-art"><span class="card-icon">{% include icon.html key=c.key %}</span></div>{% endif %}
   </header>
 

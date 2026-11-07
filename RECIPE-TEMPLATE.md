@@ -14,6 +14,10 @@ total: 1 hr
 tags: [summer, kid favorite]
 # Optional photo: put the file in assets/images/ and remove the # below. Leave it out to use the category icon.
 # image: /assets/images/name-of-the-recipe.jpg
+# Photo is cropped to fill the box. If too much gets cut off, either show the whole photo:
+# image_fit: whole
+# ...or choose which part to keep when cropping (e.g. top, bottom, center, 50% 30%):
+# image_position: top
 ---
 
 ## Ingredients

@@ -108,8 +108,11 @@ button,input{font:inherit;color:inherit}
 .recipe-art{background:var(--cat);border-radius:var(--radius);height:200px;display:grid;place-items:center;border-bottom:4px solid var(--oak);
   background-image:linear-gradient(135deg, rgba(255,255,255,.06), rgba(0,0,0,.12))}
 .recipe-art .card-icon{width:84px;height:84px}
-.has-photo{overflow:hidden}
-.has-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.has-photo{overflow:hidden;position:relative}
+.has-photo img{width:100%;height:100%;object-fit:cover;display:block;position:relative}
+/* image_fit: whole — show the entire photo, with a blurred copy of it filling the leftover space */
+.fit-whole::before{content:"";position:absolute;inset:-20px;background:var(--photo) center/cover;filter:blur(18px) brightness(.85)}
+.fit-whole img{object-fit:contain}
 
 .recipe-bar{display:flex;justify-content:space-between;align-items:center;gap:18px 30px;flex-wrap:wrap;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:16px 0;margin-bottom:40px}
 .stats{display:flex;flex-wrap:wrap;gap:12px 34px;margin:0}

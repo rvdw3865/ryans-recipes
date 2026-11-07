@@ -35,7 +35,7 @@ layout: default
   {% capture hay %}{{ p.title }} {{ p.from }} {{ p.description }} {{ c.label }} {{ tagtext }} {{ p.content }}{% endcapture %}
   <a class="card" href="{{ p.url | relative_url }}" data-cat="{{ c.key }}" style="--cat:{{ c.color }}"
      data-search="{{ hay | strip_html | strip_newlines | downcase | escape }}">
-    {% if p.image %}<div class="card-art has-photo"><img src="{{ p.image | relative_url }}" alt="" loading="lazy"></div>
+    {% if p.image %}<div class="card-art has-photo{% if p.image_fit == 'whole' %} fit-whole{% endif %}" style="--photo:url('{{ p.image | relative_url }}')"><img src="{{ p.image | relative_url }}" alt="" loading="lazy"{% if p.image_position %} style="object-position:{{ p.image_position }}"{% endif %}></div>
     {% else %}<div class="card-art"><span class="card-icon">{% include icon.html key=c.key %}</span></div>{% endif %}
     <div class="card-body">
       <span class="cat-name">{{ c.label }}</span>
