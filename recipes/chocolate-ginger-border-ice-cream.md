@@ -2,7 +2,7 @@
 title: Chocolate Ginger, Border Bar Inspired Ice Cream
 from: Ryan
 category: ice-cream
-description: This ice cream was inspired by a delicious chocolate, ginger cookies from the UK called, Border Bars. It's a buttery, gingery cookie covered in a layer of dark chocolate. They were so good that we made it into an ice cream flavor.
+description: This ice cream was inspired by a delicious chocolate, ginger cookies from the UK called, Border Bars. It's a buttery, gingery cookie covered in a layer of dark chocolate. Michael discovered these cookies and they were so good that they inspired this ice cream flavor.
 makes: 1.5 pints
 prep: 30 min
 chill: Overnight (8-12 hours)
