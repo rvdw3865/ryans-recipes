@@ -35,6 +35,11 @@ image_fit: whole
 
 ### Prepare the base
 1. Put the whole milk, sugar, corn syrup, milk powder, and xanthan gum into a pot and heat over medium low heat.
+    - 1 1/3 cup of milk
+    - 1/2 cup of sugar
+    - 2 tbsp corn syrup
+    - 2 tbsp non-fat dry milk powder
+    - 1/4 tsp of xanthan gum
 2. After 5 mins, whisk until it's mostly dissolved, then use an immersion blender to dissolve all of the ingredients into the base.
 3. Resume heating on the stove until it's steaming.
 4. Pour your heated ice cream base into a bowl and set aside.
@@ -42,14 +47,18 @@ image_fit: whole
 ### Make the base mix - Part I
 1. Preheat your oven to the High Broil setting
 2. While your oven is preheating, in an oven-safe pan (I use a cast iron skillet), fill your cast iron skillet with marshmallows.
+    - 1 Bag of Jumbo Jet Puff Marshmallows
 3. Once your oven is preheated, place your marshmallows in the oven.
 4. Check on them frequently until they are golden brown on the outside and melted on the inside.
 5. Once ready, remove from the oven and spoon ~2/3 of the melted marshmallows into your base. Set the extra to the side for adjusting later or to work into your ice cream later as a mix-in.
 6. Using an immersion blender, blend the marshmallows into the base. Be persistent. They are sticky, but the blender will do it's job.
 
 ### Make the base mix - Part II
-1. In a pan, over medium heat, pour 1/4 cup granulated sugar and 1/4 cup water and let dissolve, stirring occasionally.
-2. Once dissolved, add in your 1/4 cup of King Arthur's Black Cocoa Powder.
+1. In a pan, over medium heat, pour the sugar and water and let dissolve, stirring occasionally.
+    - 1/4 cup granulated sugar
+    - 1/4 cup water
+2. Once dissolved, add in your black cocoa powder.
+    - 1/4 cup King Arthur Black Cocoa Powder
 3. Stir until thick and scoopable. 
 
 
@@ -62,8 +71,11 @@ image_fit: whole
 1. You will want to make your chocolate-covered graham crackers no later than 1 hour prior to churning your ice cream.
 2. Prepare 2 baking sheets covered with parchment paper
 3. Break up your graham crackers in half, into squares (So you should have anywhere from 16-20 squares)
+    - 8-10 Cinnamon Graham Crackers
 4. Break up your 2 dark chocolate bars into squares
-5. In a pot, over medium-low heat, add your chocolate bar pieces and 2 tbsp of vegetable oil (or more as needed).
+    - 2 Ghirardelli 60% cacoa dark chocolate bars
+5. In a pot, over medium-low heat, add your chocolate bar pieces and vegetable oil (or more as needed).
+    - 2 tbsp vegetable oil (or other neutral oil)
 6. Melt down the chocolate pieces and turn the heat all the way down.
 7. Drop your graham crackers into the melted chocolate. Using a fork flip and fully coat your graham cracker pieces.
 8. Lift them out of the pot and onto the parchment paper. Repeat until all pieces are coated fully and on the parchment paper.
