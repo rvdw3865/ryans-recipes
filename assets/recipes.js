@@ -175,6 +175,23 @@
       recipe.classList.add("enhanced");
     }
 
+    // step details: indented bullets under a numbered step become a "More detail" dropdown
+    body.querySelectorAll("ol > li").forEach(function (li) {
+      var extras = [].filter.call(li.children, function (el) { return el.tagName === "UL"; });
+      if (!extras.length) return;
+      var wrap = document.createElement("div");
+      wrap.className = "step-text";
+      var details = document.createElement("details");
+      details.className = "step-more";
+      var summary = document.createElement("summary");
+      summary.textContent = "More detail";
+      details.appendChild(summary);
+      extras.forEach(function (ul) { details.appendChild(ul); });
+      while (li.firstChild) wrap.appendChild(li.firstChild);
+      wrap.appendChild(details);
+      li.appendChild(wrap);
+    });
+
     // set the Notes section apart
     body.querySelectorAll("h2").forEach(function (h) {
       if (!/^notes?\b/i.test(h.textContent.trim())) return;
@@ -206,6 +223,7 @@
         });
       }
       var bodyText = body.cloneNode(true); var tg = bodyText.querySelector(".tags"); if (tg) tg.remove();
+      bodyText.querySelectorAll(".step-more summary").forEach(function (s) { s.remove(); });
       parts.push(bodyText.innerText ? bodyText.innerText.trim() : bodyText.textContent.trim());
       copy(parts.join("\n\n").replace(/\n{3,}/g, "\n\n"), "Recipe copied. Paste it anywhere.");
     });

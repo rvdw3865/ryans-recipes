@@ -33,6 +33,9 @@ Mix-ins:
 ## Steps
 
 1. First step.
+   - Optional extra detail. Indent a bullet under a step (3 spaces, then a dash)
+     and it shows up as a "More detail" dropdown on the website.
+   - You can add more than one bullet.
 2. Second step.
 3. Third step.
 

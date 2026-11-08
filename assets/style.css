@@ -152,6 +152,16 @@ ul.ing input:checked + span{color:var(--ink-soft);text-decoration:line-through;t
 .recipe.enhanced .recipe-body ol>li{counter-increment:step;display:grid;grid-template-columns:44px 1fr;gap:12px;padding:16px 0;border-top:1px solid var(--rule)}
 .recipe.enhanced .recipe-body ol>li:first-child{border-top:0;padding-top:0}
 .recipe.enhanced .recipe-body ol>li::before{content:counter(step);font-family:var(--serif);font-size:1.5rem;line-height:1.1;color:var(--oak)}
+.step-text{min-width:0}
+.step-text>p:first-child{margin-top:0}
+.step-more{margin-top:8px}
+.step-more summary{cursor:pointer;width:max-content;font-size:.88rem;font-weight:600;color:var(--oak-deep);list-style:none;display:flex;align-items:center;gap:6px}
+.step-more summary::-webkit-details-marker{display:none}
+.step-more summary::before{content:"";width:6px;height:6px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg);transition:transform .15s ease}
+.step-more[open] summary::before{transform:rotate(45deg)}
+.step-more summary:hover{text-decoration:underline}
+.step-more ul{margin:8px 0 0;padding:10px 14px 10px 30px;border-left:3px solid var(--rule);background:rgba(0,0,0,.025);border-radius:0 6px 6px 0;color:var(--ink-soft);font-size:.95rem;line-height:1.55}
+.step-more li+li{margin-top:4px}
 .notes{margin-top:40px;background:var(--oak-soft);border-left:4px solid var(--oak);border-radius:var(--radius);padding:22px 24px;max-width:62ch}
 .recipe-body .notes h2{font-size:1.2rem;margin:0 0 6px;color:var(--oak-deep)}
 .notes p{margin:0 0 8px}
