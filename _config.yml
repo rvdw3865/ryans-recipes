@@ -1,12 +1,15 @@
 title: Ryan's Recipes
 tagline: Recipes from my kitchen.
 
-# Every file in the recipes folder uses the recipe page design.
+# Every file in the recipes folder uses the recipe page design,
+# and lives at a short address named after the file, e.g.
+# recipes/midnight-smore-ice-cream.md -> .../ryans-recipes/midnight-smore-ice-cream/
 defaults:
   - scope:
       path: "recipes"
     values:
       layout: recipe
+      permalink: /:basename/
 
 # Files that are notes for you, not pages on the site.
 exclude:

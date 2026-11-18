@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% assign recipes = site.pages | where_exp: "p", "p.dir == '/recipes/'" | sort_natural: "title" %}
+{% assign recipes = site.pages | where_exp: "p", "p.path contains 'recipes/'" | sort_natural: "title" %}
 <section class="intro">
   <h1>The things I cook, and the ones worth making again.</h1>
   <p>{{ recipes.size }} {% if recipes.size == 1 %}recipe{% else %}recipes{% endif %} from my kitchen and the people I've learned from. Help yourself.</p>
